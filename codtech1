@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://s3u.tmimgcdn.com/800x0/u78131763/86bdf11ba7ccc96e2bd9ea820e8d5a9e.jpg" alt="Restaurant Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="slider">
+        <div class="slider-wrapper">
+            <input type="radio" name="slide" id="slide1" checked>
+            <input type="radio" name="slide" id="slide2">
+            <input type="radio" name="slide" id="slide3">
+            
+            <div class="slides">
+                <div class="slide" id="s1">
+                    <img src="https://assets.cntraveller.in/photos/6517a5aa2f98f695fe4e5cdc/16:9/w_1024%2Cc_limit/GIGI%2520001.jpg" alt="Dish 1">
+                </div>
+                <div class="slide" id="s2">
+                    <img src="https://t3.ftcdn.net/jpg/03/11/19/38/360_F_311193887_0aXFwwXXHu4PsBAVNW1USeypg1clOH8E.jpg" alt="Dish 2">
+                </div>
+                <div class="slide" id="s3">
+                    <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2stcGYtcG9tLTEyNDIuanBn.jpg" alt="Dish 3">
+                </div>
+            </div>
+            <div class="navigation">
+                <label for="slide1" class="nav-button">&#10094;</label>
+                <label for="slide2" class="nav-button">&#10095;</label>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="menu" class="about">
+        <h1>About Us</h1>
+        <p>Welcome to our restaurant, where we serve delicious and freshly prepared dishes with a touch of love and creativity. Our team is dedicated to providing you with an unforgettable dining experience, combining exceptional food with a warm and inviting atmosphere.</p>
+    </section>
+
+
+    <section class="dishes">
+        <div class="card">
+            <img src="https://naturallynidhi.com/wp-content/uploads/2023/10/Bread-Nachos-Chaat-Cover-1.jpg" alt="Dish 1">
+            <div class="info">
+                <h2>Bread Nachos Chaat</h2>
+                <p>249 rs</p>
+                <button class="order-btn" id="order1">Order</button>
+                <input type="number" class="quantity" min="1" value="1">
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://www.puvi.co/uploaded_images/1625407677.jpg" alt="Dish 2">
+            <div class="info">
+                <h2>Corn Tikki Masala</h2>
+                <p>199 rs</p>
+                <button class="order-btn" id="order2">Order</button>
+                <input type="number" class="quantity" min="1" value="1">
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://naturallynidhi.com/wp-content/uploads/2023/04/Pyaaz-Kachori-Taquitos-1-500x500.jpg?crop=1" alt="Dish 3">
+            <div class="info">
+                <h2>Pyaaz Kachori Taquitos</h2>
+                <p>219 rs</p>
+                <button class="order-btn" id="order3">Order</button>
+                <input type="number" class="quantity" min="1" value="1">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="reviews" class="reviews">
+        <h1>Customer Reviews</h1>
+        <div class="review-form">
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewerName">Name:</label>
+                    <input type="text" id="reviewerName" name="reviewerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="review">Review:</label>
+                    <textarea id="review" name="review" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                </div>
+                <button type="submit" onclick="showalert()">Submit Review</button>
+            </form>
+            <p id="reviewMessage" style="color: red;"></p>
+        </div>
+        <div class="review-list">
+            <div class="review-item">
+                <h3>John Doe</h3>
+                <div class="stars">★★★★☆</div>
+                <p>Great food and excellent service! Highly recommend.</p>
+            </div>
+            <div class="review-item">
+                <h3>Jane Smith</h3>
+                <div class="stars">★★★☆☆</div>
+                <p>Good food, but the wait time was a bit long.</p>
+            </div>
+            <div class="review-item">
+                <h3>Michael Brown</h3>
+                <div class="stars">★★★★★</div>
+                <p>Absolutely fantastic experience! Will definitely come back.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or would like to make a reservation, feel free to reach out to us. We look forward to hearing from you!</p>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="formMessage" style="color: red;"></p>
+        <address>
+            <p>Email: <a href="mailto:info@restaurant.com">info@restaurant.com</a></p>
+            <p>Phone: <a href="tel:+987654321">+91 9988776655</a></p>
+            <p>Address: #321, J P Nagar, Bengaluru, Karnataka-64</p>
+        </address>
+    </section>
+
+  
+    <footer>
+        <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Apply a border to all images
+    $('img').css('border', '2px solid black');
+
+    // Change background color of the home section
+    $('#home').css('background-color', '#f0f0f0');
+
+    // Make navigation menu bold
+    $('nav li').css('font-weight', 'bold');
+
+    // Change background color of Order buttons on hover
+    $('.order-btn').hover(function() {
+      $(this).css('background-color', '#ff6347'); // On hover
+    }, function() {
+      $(this).css('background-color', ''); // On hover out
+    });
+
+    // Show a message when the review form is submitted
+    $('#reviewForm').submit(function(event) {
+      event.preventDefault();
+      $('#reviewMessage').text('Thank you for your review!').css('color', 'green');
+    });
+
+    // Alert when the quantity of items changes
+    $('.quantity').change(function() {
+      let quantity = $(this).val();
+      alert('You selected ' + quantity + ' item(s)');
+    });
+
+    // Highlight active navigation link
+    $('nav a').click(function() {
+      $('nav a').removeClass('active');
+      $(this).addClass('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+#css
+
+
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo img {
+    height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+input#slide2:checked ~ .slides {
+    transform: translateX(-33.33%);
+}
+
+input#slide3:checked ~ .slides {
+    transform: translateX(-66.66%);
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    33.33% { transform: translateX(-33.33%); }
+    66.66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0%); }
+}
+
+.slides {
+    animation: slide 9s infinite;
+}
+
+.about, .contact, .reviews {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about h1, .contact h1, .reviews h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.about p, .contact p, .reviews p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact address, .reviews .review-list {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.dishes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 10px;
+}
+
+.info h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #2c3e50;
+}
+
+.info p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.order-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.order-btn:hover {
+    background-color: #2980b9;
+}
+
+.quantity {
+    width: 50px;
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+}
+
+.contact form, .review-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.reviews .review-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.reviews .review-item:last-child {
+    border-bottom: none;
+}
+
+.stars {
+    color: #f1c40f;
+    font-size: 1.2em;
+}
+
+
+
